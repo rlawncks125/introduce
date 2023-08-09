@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  traefik:
+    image: "traefik:v2.10"
+    container_name: "introduce-traefik"
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80" # web 엔드포인트 설정
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
+  nuxt:
+    image: rlawncks125/introduce
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: "introduce-web"
+    labels:
+      - "traefik.enable=true" # traefik 활성화
+      - "traefik.http.routers.nuxt-1.rule=Host(`front.localhost`)" # 리버스 프록시 주소
+      - "traefik.http.routers.nuxt-1.entrypoints=web" # 엔드포인트
+      - "traefik.http.services.nuxt-1.loadbalancer.server.port=3000"
+    depends_on:
+      - traefik

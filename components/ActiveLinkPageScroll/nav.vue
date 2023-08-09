@@ -32,7 +32,13 @@ const obsLink = () => {
   // console.log(catchScroll, catchC, scrollY);
 };
 
-onMounted(() => {
+const init = () => {
+  scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "instant",
+  });
+  sctionMaps.value.length = 0;
   navHegiht.value =
     document.querySelector("header")?.getBoundingClientRect().bottom || 0;
 
@@ -48,12 +54,18 @@ onMounted(() => {
     });
   });
   // console.log(sctionMaps.value);
+};
+
+onMounted(() => {
+  init();
 
   window.addEventListener("scroll", obsLink);
+  window.addEventListener("resize", init);
   obsLink();
 });
 onUnmounted(() => {
   window.removeEventListener("scroll", obsLink);
+  window.removeEventListener("resize", init);
 });
 </script>
 
@@ -81,7 +93,8 @@ header {
   @apply sticky left-0 top-0 w-full flex justify-center overflow-hidden bg-[#333];
 
   & .header-wrap {
-    @apply w-full px-[50px] pt-[10px] flex justify-between items-center;
+    @apply px-[25px] flex-row-reverse;
+    @apply w-full sm:px-[50px] pt-[10px] flex sm:flex-row justify-between items-center;
   }
 
   & .logo {
@@ -93,10 +106,11 @@ header {
   @apply flex gap-[10px];
 
   .linked {
-    @apply relative text-[#fff] font-[600] py-[12px] px-[20px];
+    @apply hidden;
+    @apply sm:block relative text-[#fff] font-[600] py-[12px] px-[20px];
 
     &.active {
-      @apply text-[#333] rounded-l-[10px] rounded-r-[10px];
+      @apply block text-[#333] rounded-l-[10px] rounded-r-[10px];
 
       background: var(--clr);
     }

@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <ActiveLinkPageScrollSection
-    class="h-[100vh]"
+    class="h-[50vh]"
     bg-color="#ff4d4d"
     section-id="소개"
   >

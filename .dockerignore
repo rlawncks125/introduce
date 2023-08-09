@@ -1,0 +1,5 @@
+docker-compose
+.nuxt
+.output
+dist
+node_modules
