@@ -48,7 +48,7 @@ definePageMeta({
   <!-- About -->
   <ActiveLinkPageScrollSection
     class="py-[4rem]"
-    bg-color="#F9C51D"
+    bg-color="#ffd480"
     section-id="About"
   >
     <div class="max-w-dialogue mx-auto h-full">
@@ -117,9 +117,9 @@ definePageMeta({
             <div class="flex flex-col gap-2">
               <p>자격증</p>
               <ol class="list-decimal pl-[.8rem]">
-                <li>정보처리 기사</li>
-                <li>컴퓨터 활용 1급</li>
-                <li>리눅스 마스터</li>
+                <li>정보처리 기사 ( 2020.11 )</li>
+                <li>컴퓨터 활용 1급 ( 2019.07 )</li>
+                <li>리눅스 마스터 ( 2018.03 )</li>
               </ol>
             </div>
           </div>
