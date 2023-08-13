@@ -6,6 +6,7 @@ interface SctionMaps {
   bottom: number;
 }
 let oldViewPortVertical: number;
+let oldViewPortHorizontal: number;
 
 const activeClass = ref();
 const sctionMaps = ref<SctionMaps[]>([]);
@@ -38,8 +39,13 @@ const obsLink = () => {
 
 const resizeVertical = () => {
   // 수직 이벤트에만
-  // if (oldViewPortVertical === document.documentElement.clientHeight) return;
+  if (
+    oldViewPortVertical === document.documentElement.clientHeight &&
+    oldViewPortHorizontal === document.documentElement.clientWidth
+  )
+    return;
   oldViewPortVertical = document.documentElement.clientHeight;
+  oldViewPortHorizontal = document.documentElement.clientWidth;
 
   sctionMaps.value.length = 0;
   navHegiht.value =
