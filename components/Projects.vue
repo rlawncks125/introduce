@@ -151,14 +151,11 @@ const setVideoTime = (ref: HTMLVideoElement, time: string) => {
   ref.currentTime = moveTime;
 
   ref.scrollIntoView({ behavior: "smooth" });
-
-  // videoRef.value!.autoplay = true;
 };
 
 onMounted(() => {
   const details = document.querySelectorAll("[data-details='Accordion']");
 
-  console.log(details);
   details.forEach((el) => {
     new Accordion(el as HTMLElement);
   });
@@ -281,6 +278,7 @@ onMounted(() => {
             <li>- ServiceWorker를 이용한 캐싱 , 알람 API ( 방 승인시 알람 )</li>
           </ul>
         </div>
+        <br />
         <h2 class="text-[1.5rem] font-bold">사용 기술</h2>
         <div>
           <p>#FE : Vue.js , Tailwind.css</p>

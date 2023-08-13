@@ -17,16 +17,38 @@ definePageMeta({
   </section>
 
   <ActiveLinkPageScrollSection
-    class="h-[40vh]"
-    bg-color="#F9C51D"
+    class="p-4 text-center break-all mx-auto max-w-[800px]"
+    bg-color="white"
     section-id="소개"
   >
+    <div class="text-[1rem] font-[300]">
+      <p>
+        저는 새로운 도전과 학습을 즐기는 자기 주도적인 성향을 가지고 있습니다.
+      </p>
+      <p>
+        어떤 분야에서든 호기심과 열정으로 스스로 공부하고 발전하기 위해
+        노력합니다.
+      </p>
+      <p>
+        프론트 엔드 개발 분야에서는 효율적이고 사용자 친화적인 웹 애플리케이션을
+        개발하기 위해 다양한 기술과 도구를 습득하고 적용하는 데에 주력하고
+        있습니다.
+      </p>
+      <p>
+        저는 새로운 기술 동향과 트렌드에 관심이 많습니다. 업계의 변화에 민감하게
+        대응하기 위해 지속적인 학습과 자기계발을 추구하고 있습니다. 
+        <p>
+          현재는 Vue.js와 Nuxt.js에 집중하고 있으나, React.js나 Angular 등 다른
+          프레임워크도 익히고자 하는 욕심이 있습니다.
+        </p>
+      </p>
+    </div>
   </ActiveLinkPageScrollSection>
 
   <!-- About -->
   <ActiveLinkPageScrollSection
     class="py-[4rem]"
-    bg-color="white"
+    bg-color="#F9C51D"
     section-id="About"
   >
     <div class="max-w-dialogue mx-auto h-full">
@@ -109,7 +131,7 @@ definePageMeta({
   <!-- skill -->
   <ActiveLinkPageScrollSection bg-color="#ffbb99" section-id="Skill">
     <div class="h-[66rem] sm:h-[40rem] p-2 max-w-dialogue mx-auto">
-      <p class="text-center text-[3rem] font-[700] mb-[2rem]">Skills</p>
+      <p class="text-center text-[3rem] font-[700] my-[2rem]">Skills</p>
       <!-- skil warp -->
       <div
         class="grid grid-cols-1 sm:flex flex-col flex-wrap max-h-[80%] gap-3"
@@ -196,11 +218,11 @@ definePageMeta({
 
   <!-- 프로젝트 -->
   <ActiveLinkPageScrollSection
-    class="my-[5rem]"
+    class=""
     bg-color="#ffa64d"
     section-id="프로젝트"
   >
-    <h1 class="text-[3rem] text-center py-4">프로젝트</h1>
+    <h1 class="text-[3rem] text-center py-8">프로젝트</h1>
     <Projects class="max-w-dialogue mx-auto" />
     <!-- 배운점 -->
     <div class="px-4">
@@ -289,10 +311,11 @@ definePageMeta({
         </div>
       </div>
     </div>
+
     <!-- 시행 착오 -->
-    <div class="max-w-dialogue mx-auto px-4">
+    <!-- <div class="max-w-dialogue mx-auto px-4">
       <h2 class="text-center text-[3rem] py-[2rem]">시행착오</h2>
-      <!-- 문제1 -->
+      #문제1
       <div class="bg-white rounded-lg p-4">
         <h2 class="text-[2.5rem] font-[700]">한글 아이디 깨짐</h2>
         <h3 class="text-[1.5rem]">[문제점]</h3>
@@ -303,7 +326,7 @@ definePageMeta({
           디코딩하여 해결
         </p>
       </div>
-      <!-- 문제2 -->
+      #문제2
       <div class="bg-white rounded-lg p-4 my-2">
         <h2 class="text-[2.5rem] font-[700]">리전 문제</h2>
         <h3 class="text-[1.5rem]">[ 환경 ]</h3>
@@ -338,10 +361,14 @@ definePageMeta({
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
+
     <br />
   </ActiveLinkPageScrollSection>
-  <section class="h-[100vh]">그냥 섹션 안잡힘</section>
+
+  <footer class="bg-[#334155] text-gray-200 p-4">
+    Copyright 2023. 김주찬. all rights reserved.
+  </footer>
 </template>
 
 <style lang="scss"></style>

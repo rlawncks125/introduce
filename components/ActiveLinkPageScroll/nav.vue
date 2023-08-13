@@ -73,6 +73,7 @@ onMounted(() => {
 
   window.addEventListener("scroll", obsLink);
   window.addEventListener("resize", resizeVertical);
+
   obsLink();
 });
 onUnmounted(() => {
