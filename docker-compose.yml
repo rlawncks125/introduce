@@ -21,10 +21,13 @@ services:
       context: .
       dockerfile: dockerfile
     container_name: "introduce-web"
+    ports:
+      # - 80:80
+      - 3000:3000
     labels:
       - "traefik.enable=true" # traefik 활성화
       - "traefik.http.routers.nuxt-1.rule=Host(`front.localhost`)" # 리버스 프록시 주소
       - "traefik.http.routers.nuxt-1.entrypoints=web" # 엔드포인트
-      - "traefik.http.services.nuxt-1.loadbalancer.server.port=3000"
+      # - "traefik.http.services.nuxt-1.loadbalancer.server.port=3000"
     depends_on:
       - traefik

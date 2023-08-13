@@ -10,7 +10,11 @@ module.exports = {
     "./app.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      maxWidth: {
+        dialogue: "1200px",
+      },
+    },
   },
   plugins: [],
 };

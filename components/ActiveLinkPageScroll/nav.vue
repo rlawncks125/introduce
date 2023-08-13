@@ -3,7 +3,9 @@ interface SctionMaps {
   sectionId: any;
   sectionColor: any;
   top: number;
+  bottom: number;
 }
+let oldViewPortVertical: number;
 
 const activeClass = ref();
 const sctionMaps = ref<SctionMaps[]>([]);
@@ -14,64 +16,74 @@ const moveLikedBySectionId = (sectionId: string) => {
   // console.log(find[0].top);
   scrollTo({
     top: find[0].top - navHegiht.value,
-    behavior: "smooth",
+    behavior: "auto",
   });
 };
 
 const obsLink = () => {
   let catchC = "";
   const catchScroll = scrollY + navHegiht.value;
-  sctionMaps.value.reduce((a, b) => {
-    if (a.top <= catchScroll && catchScroll < b.top) {
-      catchC = a.sectionId;
+
+  for (let i = 0; i < sctionMaps.value.length; i++) {
+    if (
+      sctionMaps.value[i].top <= catchScroll &&
+      catchScroll < sctionMaps.value[i].bottom
+    ) {
+      catchC = sctionMaps.value[i].sectionId;
+      break;
     }
-    return b;
-  }, sctionMaps.value[0]);
-  activeClass.value =
-    catchC || sctionMaps.value[sctionMaps.value.length - 1].sectionId;
-  // console.log(catchScroll, catchC, scrollY);
+  }
+  activeClass.value = catchC;
 };
 
-const init = () => {
-  scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "instant",
-  });
+const resizeVertical = () => {
+  // 수직 이벤트에만
+  // if (oldViewPortVertical === document.documentElement.clientHeight) return;
+  oldViewPortVertical = document.documentElement.clientHeight;
+
   sctionMaps.value.length = 0;
   navHegiht.value =
     document.querySelector("header")?.getBoundingClientRect().bottom || 0;
 
-  const sections = document.querySelectorAll("section");
+  const sections = document.querySelectorAll("section[data-section-id]");
   sections.forEach((el) => {
     // console.log(el.dataset.sectionId, el.dataset.sectionColor);
 
-    const { sectionId, sectionColor } = el.dataset;
+    const { sectionId, sectionColor } = (el as HTMLElement).dataset;
     sctionMaps.value.push({
       sectionId,
       sectionColor,
       top: el.getBoundingClientRect().top,
+      bottom: el.getBoundingClientRect().bottom,
     });
   });
-  // console.log(sctionMaps.value);
+
+  setTimeout(() => {
+    scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, 0);
 };
 
 onMounted(() => {
-  init();
+  resizeVertical();
+  oldViewPortVertical = document.documentElement.clientHeight;
 
   window.addEventListener("scroll", obsLink);
-  window.addEventListener("resize", init);
+  window.addEventListener("resize", resizeVertical);
   obsLink();
 });
 onUnmounted(() => {
   window.removeEventListener("scroll", obsLink);
-  window.removeEventListener("resize", init);
+  window.removeEventListener("resize", resizeVertical);
 });
 </script>
 
 <template>
   <header>
-    <div class="header-wrap max-w-[700px]">
+    <div class="header-wrap max-w-dialogue">
       <a href="#" class="logo">김주찬</a>
       <nav>
         <div
@@ -107,7 +119,7 @@ header {
 
   .linked {
     @apply hidden;
-    @apply sm:block relative text-[#fff] font-[600] py-[12px] px-[20px];
+    @apply sm:block relative text-[#fff] font-[600] py-[12px] px-[20px] hover:text-pink-300;
 
     &.active {
       @apply block text-[#333] rounded-l-[10px] rounded-r-[10px];
