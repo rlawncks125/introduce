@@ -345,7 +345,7 @@ onMounted(() => {
           </div>
         </details>
       </div>
-      <div class="flex-1">
+      <div class="flex-1 font-[300]">
         <div class="my-2 flex gap-2 items-center">
           <a
             href="https://github.com/rlawncks125/portfolio_Nuxt_Shopping"
@@ -373,13 +373,16 @@ onMounted(() => {
         <div>
           <ul>
             <li>- OG META</li>
-            <li>- 동적 라우터 를 이용한 미리 보기 화면 생성</li>
+            <li>- 동적 라우터 를 이용한 <b>미리 보기 화면</b> 생성</li>
             <li>
-              - vue-router 네비게이션 가드 를 이용하여 잘못된 페이지 이탈 방어
+              - vue-router <b>네비게이션 가드</b> 를 이용하여 잘못된 페이지 이탈
+              방어
             </li>
-            <li>- 봇방지 를 위한 reCAPTCHA를 사용</li>
-            <li>- ServiceWorker를 이용한 알람 API ( 물품 상태 변경시 알람 )</li>
-            <li>- 웹 마스터 도구 에 등록하여 검색 엔진 노출</li>
+            <li>- 봇방지 를 위한 <b>reCAPTCHA</b>를 사용</li>
+            <li>
+              - <b>ServiceWorker</b>를 이용한 알람 API ( 물품 상태 변경시 알람 )
+            </li>
+            <li>- <b>웹 마스터 도구</b> 에 등록하여 <b>검색 엔진 노출</b></li>
           </ul>
         </div>
         <br />
