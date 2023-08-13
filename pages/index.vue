@@ -16,6 +16,7 @@ definePageMeta({
     </div>
   </section>
 
+  <!-- 소개 -->
   <ActiveLinkPageScrollSection
     class="p-4 text-center break-all mx-auto max-w-[800px]"
     bg-color="white"
@@ -78,7 +79,7 @@ definePageMeta({
             <Icon name="mdi:map-marker-check" class="text-[3rem]" />
             <div class="flex flex-col gap-2">
               <p>주소지</p>
-              <span class="font-[300]">인천 광역시</span>
+              <span class="font-[300]">인천 광역시 <p>1호선 5분거리</p></span>
             </div>
           </div>
         </div>
