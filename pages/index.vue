@@ -4,7 +4,7 @@ definePageMeta({
 });
 </script>
 
-<template>
+<template>  
   <section>
     <div
       class="h-[20rem] flex justify-center items-center text-[2rem] text-center"

@@ -2,7 +2,8 @@
 
 <template>
   <div>
-    <ActiveLinkPageScrollNav />
+    <!-- <ActiveLinkPageScrollNav /> -->
+    <ActiveLinkPageScrollNavObs />
     <slot />
   </div>
 </template>
