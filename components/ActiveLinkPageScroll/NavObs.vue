@@ -20,7 +20,6 @@ function ObserverCallback(entries: IntersectionObserverEntry[]) {
   });
   const visibles = visiblesSections.value.indexOf(true);
   activeClass.value = sectionMaps.value[visibles].sectionId;
-  console.log(activeClass.value);
 }
 
 function moveLikedBySectionId(sectionId: any) {

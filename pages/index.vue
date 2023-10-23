@@ -42,6 +42,9 @@ definePageMeta({
           현재는 Vue.js와 Nuxt.js에 집중하고 있으나, React.js나 Angular 등 다른
           프레임워크도 익히고자 하는 욕심이 있습니다.
         </p>
+        <p>
+          저는 새로운 기술과 도전을 통해 성장하고, 협업을 통해 팀의 목표를 달성하는 개발자가 되고 싶습니다. 이를 통해 창의적인 웹 애플리케이션을 개발하고 사용자들에게 가치를 제공하고 싶습니다.
+        </p>
       </p>
     </div>
   </ActiveLinkPageScrollSection>
