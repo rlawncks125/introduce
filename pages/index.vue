@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 definePageMeta({
   layout: "active-link-page-scroll",
 });
@@ -17,7 +18,7 @@ definePageMeta({
   </section>
 
   <!-- 소개 -->
-  <ActiveLinkPageScrollSection
+  <ActiveLinkPageScrollSection    
     class="p-4 text-center break-all mx-auto max-w-[800px]"
     bg-color="white"
     section-id="소개"
@@ -123,7 +124,7 @@ definePageMeta({
               <ol class="list-decimal pl-[.8rem]">
                 <li>정보처리 기사 ( 2020.11 )</li>
                 <li>컴퓨터 활용 1급 ( 2019.07 )</li>
-                <li>리눅스 마스터 ( 2018.03 )</li>
+                <li>리눅스 마스터 2급 ( 2018.03 )</li>
               </ol>
             </div>
           </div>

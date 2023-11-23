@@ -9,5 +9,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  ssr: false,
+  // CSR 배포
+  // ssr: false,
 });
